@@ -1,0 +1,420 @@
+id,user_id,version_no,name,description,created_at,updated_at,applications,categories,business_objects,runnable,running,job_succeeded_count,job_failed_count,parent_id
+8908033,69632,1,List Contacts for forecasted Opportunities without recent sales activity,"Contact these Opportunities
+
+Opportunities closing this month with last activity date &gt; 30 days ago. Limited to 10 results. ",2019-02-04T09:22:22.833-08:00,2019-02-08T15:26:42.846-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,user,message,opportunity,account}",FALSE,FALSE,0,0,491367
+9890804,69632,1,Show Opportunity details,Show Opportunity details in Salesforce,2019-02-04T09:22:23.115-08:00,2019-02-08T15:26:42.823-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,opportunity,message,account}",FALSE,FALSE,0,0,491369
+1890806,69632,1,List recents Tickets in Zendesk,List recent tickets in Zendesk,2019-02-04T09:22:23.543-08:00,2019-02-08T15:26:42.777-08:00,"{skype_bot,skype_bot,zendesk}","{Bots,""Artificial Intelligence"",""Customer Service""}","{command,message,ticket}",FALSE,FALSE,0,0,493053
+1890807,69632,1,Create Ticket in Zendesk,Create Ticket in Zendesk,2019-02-04T09:22:23.775-08:00,2019-02-08T15:26:42.755-08:00,"{skype_bot,skype_bot,zendesk}","{Bots,""Artificial Intelligence"",""Customer Service""}","{command,message,ticket}",FALSE,FALSE,0,0,493056
+8830654,68728,1,List Open Cases,"Top Priority Open Cases 
+
+Posted Daily at 9am Limited to 10 results. 
+",2019-01-17T14:03:51.609-08:00,2019-01-17T14:03:51.609-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,case,message,user}",FALSE,FALSE,0,0,491358
+8830656,54427,10,New Estimate on QB Creates / Updates Salesforce Opportunity,### heading text New estimate in QuickBooks will create opportunity and lines Salesforce,2019-02-15T15:30:40.502-08:00,2019-02-20T21:53:51.796-08:00,"{quickbooks,salesforce,email}","{Accounting,CRM,Marketing,""Recipe Tools""}","{account,email,opportunity,opportunity}",FALSE,FALSE,1,1,571412
+8830658,54810,3,New event via HTTP polling will insert batch of rows in a table in MySQL,"When there is a new event via HTTP polling, insert batch of rows in a table in MySQL",2019-02-14T21:49:12.825-08:00,2019-02-14T21:49:51.130-08:00,"{rest,logger}","{""Developer Tool"",""API Integration"",""Recipe Tools""}",{},FALSE,FALSE,0,0,895982
+8830660,17354,1,Adhoc Add from Opp List (Prod),"When there is a new row in a table in MySQL, call recipe  ",2019-02-05T01:03:40.403-08:00,2019-02-05T01:03:40.403-08:00,"{mysql,workato_service}","{Database,""Recipe Tools""}",{},FALSE,FALSE,1,1,834148
+8830662,69475,10,Delete all files in Google Drive on a daily interval,"When there is a trigger event, do action",2019-02-06T17:09:55.122-08:00,2019-02-08T06:47:48.914-08:00,"{clock,google_drive}","{""Recipe Tools"",Document/File}",{},FALSE,TRUE,28,0,
+8830664,23019,1,New Infusionsoft Order to QuickBooks Invoice (US Only),"Recipe Title : **Sync new Infusionsoft invoices and lines to QuickBooks**
+
+---------------------------------------
+**Important Notes : **  
+
+### Please Read through this Description before starting the recipe. 
+
+
+---------------------------------------
+### What this recipe Does :
+
+
+Advanced recipe: Creates a new QuickBooks Invoice for any new Infusionsoft Order Created.
+
+- There is an additional wait time of 5 minutes (excluding polling cycle) to allow for your Order Line Items to be created when the order is created.
+- If the Infusionsoft Order has no Line Items, it will not create any Invoice in QuickBooks
+- No duplicates are created, and no updates are made to existing invoice.
+- Voided QuickBooks that were synced from Infusionsoft will not be picked up.
+
+_Contact Syncing_
+Contact is created if it does not exist in your QuickBooks.
+- Contact is created based on the provided format that you'd prefer for First Name, Last Name, and Company Name. Please see Configuration Parameter for more details.
+- If the Order's Contact DOES NOT have EITHER First Name, Last Name, AND Company Name, The Order will not be synced, and you will be notified on your Job Report as well as Email Notification.
+
+_Item Syncing_
+Items are created based on the products associated with each Order Line Items.
+- If the Item does not exist in your QuickBooks, one will be created.
+- Items are matched based on Product Name as the Item Name.
+- Items are taxable If the Product in Infusionsoft is also Taxable.
+
+_Ad-Hoc Item_
+If an Order Line Item does not associate with a PRODUCT in Infusionsoft, that line item will exist in QuickBooks Invoice as the Ad-Hoc Item. 
+- Ad-Hoc Items are Taxable IF it has been specified in the configuration as Taxable.
+
+-----------------------------------
+### Parameters
+
+Parameters are configurations available to provide a level of customisations for essential components such as Taxes and Currencies.
+	     - Note : Make sure that all parameters are set correctly BEFORE starting the recipe. It will affect the behaviour of your recipes. 
+
+**Income Account :** The Account where newly created Item will be associated with.
+
+**Currency Code : **Choose the currency that you use for your QuickBooks.
+
+**Tax Option :**  Specify if your invoices should be taxable, or it should be decided based on QuickBook's Item
+
+**Tax Code : **If taxable, Specify which tax should the invoice use
+
+**Ad-Hoc Item :** If your Infusionsoft Invoice contains line items that do not have any associated product, this item will be used in its place in QuickBooks' Invoice
+
+**Adhoc Item Tax treatment  : ** Decide if the Adhoc Item should be taxable or not
+
+**Additional Wait Time :** Choose yes if you do take time to add your order items. Ideally to choose additional wait times(+5mins) if you manually enter your orders and usually takes more than 3 minutes to add them in.
+
+**Customer/Client name format :** You can choose how you would like to display your client/customer in your invoices based on the permutations of First Name , Last Name and Company Name.
+ 
+	
+----------------------------------
+### Support
+
+For all enquiries, troubleshooting, and recipe behaviour related questions, please post them here : https://support.workato.com/support/discussions
+
+Learn more about Workato 
+https://support.workato.com/support/solutions
+
+Questions? Contact us at
+ [support@workato.com](mailto:support@workato.com)",2019-01-18T04:57:39.837-08:00,2019-01-18T04:57:39.837-08:00,"{infusionsoft,clock,infusionsoft,quickbooks,email,utility}","{CRM,Marketing,""Recipe Tools"",Accounting}","{invoice,item,contact,email,customer,product,order}",FALSE,FALSE,0,0,281523
+8830666,16796,12,Trigger on a specified interval will update object in Oracle HCM cloud,"When there is a trigger on a specified interval, do action",2019-01-25T10:17:02.898-08:00,2019-01-25T11:35:49.740-08:00,"{oracle_hcm_cloud_connector_16796_1547729261,oracle_hcm_cloud_connector_16796_1547729261,logger}","{""Recipe Tools""}",{},FALSE,FALSE,1,0,
+8830668,53282,2,Scheduled record search using SOQL query in Salesforce will log message to output,"When there is a scheduled record search using SOQL query in Salesforce, log message to output",2019-02-01T17:59:09.120-08:00,2019-02-01T18:41:33.191-08:00,"{salesforce,logger}","{CRM,Marketing,""Recipe Tools""}",{opportunity},FALSE,FALSE,0,0,
+8830670,65753,11,"When task is completed, sync task attachment to Drive","When there is a trigger event, do action",2019-02-19T20:03:55.662-08:00,2019-02-19T20:21:45.896-08:00,"{wrike,wrike,file_connector,google_drive}","{""Project Management"",Document/File}",{},FALSE,FALSE,1,1,
+8830672,62483,1,New recipe,"When there is a trigger event, do action",2019-02-14T10:52:23.418-08:00,2019-02-14T10:52:23.418-08:00,{wrike},"{""Project Management""}",{},FALSE,FALSE,0,0,
+8830674,62483,2,New/updated project in Wrike will custom action in Wrike (Custom),"When there is a trigger event, do action",2019-02-15T09:10:52.292-08:00,2019-02-15T09:57:42.363-08:00,"{wrike,wrike}","{""Project Management""}",{},FALSE,FALSE,0,0,
+8830676,67040,2,Record Salesforce Marketing Cloud data extensions to Google Sheets,"1. A data extension row is created in Salesforce Marketing Cloud.
+2. Workato records the data extension row in Google Sheets as a new row.
+[Copy sample Google Sheet here](https://docs.google.com/spreadsheets/d/1Cp7p44FRc1w6hQXT3H-iU5h4MFaU9sxvk46uGxfbZ3o/edit?usp=sharing)
+
+**Requirements**
+To run this recipe, copy or recreate the sample Google Sheet (with sample data) in your Google Drive account.",2019-01-08T09:11:28.919-08:00,2019-01-08T09:11:29.237-08:00,"{salesforce_marketing_cloud,google_sheets}","{Marketing,Document/File}","{""spreadsheet row""}",FALSE,FALSE,0,0,803142
+8830678,10619,1,New recipe,"When there is a trigger event, do action",2019-02-07T19:33:10.070-08:00,2019-02-07T19:33:10.070-08:00,{},{},{},FALSE,FALSE,0,0,
+8830680,54567,2,Copy of Copy of Copy of Copy of Copy of Copy of Post Funding,"When there is a trigger event, do action",2019-02-01T23:29:42.761-08:00,2019-02-01T23:30:48.421-08:00,"{quickbase,smartsheet}","{""Project Management"",Document/File}",{record},FALSE,FALSE,2377,0,890496
+8830682,31498,5,EY Shire_Child_Update User_Prod,"When there is a trigger event, do action",2019-01-02T14:34:03.531-08:00,2019-01-07T14:48:55.974-08:00,"{workato_service,workato_service,logger,rest,csv_parser,lookup_table,replicon,workato_list,json_parser}","{""Recipe Tools"",""Developer Tool"",""API Integration"",""Data Parser"",""Time and Expense""}",{user},FALSE,TRUE,312,0,862694
+8830684,61451,5,Brochure Request Thank You,"When there is a new event via HTTP webhook, send request via HTTP",2019-01-29T10:05:37.878-08:00,2019-02-07T09:21:40.999-08:00,"{rest,rest}","{""Developer Tool"",""API Integration""}",{},FALSE,TRUE,8,0,
+8830686,69758,2,Callable - Get external id from cache,"When there is a new call for callable recipe, 
+      Add
+      entry
+      to
+      
+      lookup table
+    ",2019-02-11T00:25:26.610-08:00,2019-03-05T01:18:34.868-08:00,"{workato_service,workato_service,lookup_table}","{""Recipe Tools""}",{},FALSE,TRUE,0,0,
+8830688,71459,7,Vbo New file or folder in Google Drive will download file contents in Google Drive,"When there is a new file or folder in Google Drive, download file contents in Google Drive",2019-02-25T21:22:44.338-08:00,2019-02-25T21:51:32.913-08:00,"{google_drive,google_drive,csv_parser,salesforce}","{Document/File,""Data Parser"",CRM,Marketing}",{contact},FALSE,FALSE,0,0,901872
+8830690,68728,1,Weekly Notification of Open Cases,"Top Priority Open Cases 
+
+Posted Daily at 9am Limited to 10 results. 
+",2019-01-17T14:03:51.881-08:00,2019-01-17T14:03:51.881-08:00,"{clock,salesforce,skype_bot}","{""Recipe Tools"",CRM,Marketing,Bots,""Artificial Intelligence""}","{case,message,user}",FALSE,FALSE,0,0,491359
+8830692,51806,12,Copy of New/updated file in directory on SFTP server will download file from SFTP server,"When there is a new/updated file in directory on SFTP server, download file from SFTP server",2019-02-22T14:53:33.578-08:00,2019-02-25T14:28:41.257-08:00,"{sftp,sftp,google_drive}","{""File Transfer"",Document/File}",{},FALSE,FALSE,0,16,898509
+8830694,23019,1,New Infusionsoft Order to QuickBooks Invoice (International Only),"Recipe Title : **Sync new Infusionsoft invoices and lines to QuickBooks (International Only)**
+
+---------------------------------------
+**Important Notes : **  
+
+### Please Read through this Description before starting the recipe. 
+
+
+---------------------------------------
+### What this recipe Does :
+
+
+Advanced recipe: Creates a new QuickBooks Invoice for any new Infusionsoft Order Created.
+
+- There is an additional wait time of 5 minutes (excluding polling cycle) to allow for your Order Line Items to be created when the order is created.
+- If the Infusionsoft Order has no Line Items, it will not create any Invoice in QuickBooks
+- No duplicates are created, and no updates are made to existing invoice.
+- Voided QuickBooks that were synced from Infusionsoft will not be picked up.
+
+_Contact Syncing_
+Contact is created if it does not exist in your QuickBooks.
+- Contact is created based on the provided format that you'd prefer for First Name, Last Name, and Company Name. Please see Configuration Parameter for more details.
+- If the Order's Contact DOES NOT have EITHER First Name, Last Name, AND Company Name, The Order will not be synced, and you will be notified on your Job Report as well as Email Notification.
+
+_Item Syncing_
+Items are created based on the products associated with each Order Line Items.
+- If the Item does not exist in your QuickBooks, one will be created.
+- Items are matched based on Product Name as the Item Name.
+- Items are taxable If the Product in Infusionsoft is also Taxable.
+
+_Ad-Hoc Item_
+If an Order Line Item does not associate with a PRODUCT in Infusionsoft, that line item will exist in QuickBooks Invoice as the Ad-Hoc Item. 
+- Ad-Hoc Items are Taxable IF it has been specified in the configuration as Taxable.
+
+-----------------------------------
+### Parameters
+
+Parameters are configurations available to provide a level of customisations for essential components such as Taxes and Currencies.
+	     - Note : Make sure that all parameters are set correctly BEFORE starting the recipe. It will affect the behaviour of your recipes. 
+	
+**Income Account :** The Account where newly created Item will be associated with.
+
+**Currency Code :** Choose the currency that you use for your QuickBooks.
+
+**Tax Option :** Specify if your invoices should be taxable, or it should be decided based on QuickBook's Item
+
+**Tax Code :** If taxable, Specify which tax should the invoice use
+
+**0% Tax Code :** If you have some items that are non-taxable and some that are, This parameter will choose tax code (Which you must ensure it is 0% rate) to apply for them. This makes the item non-taxable.
+
+**Ad-Hoc Item :** If your Infusionsoft Invoice contains line items that do not have any associated product, this item will be used in its place in QuickBooks' Invoice
+
+**Adhoc Item Tax treatment : **Decide if the Adhoc Item should be taxable or not
+
+**Additional Wait Time :** Choose yes if you do take time to add your order items. Ideally to choose additional wait times(+5mins) if you manually enter your orders and usually takes more than 3 minutes to add them in.
+
+**Customer/Client name format : **You can choose how you would like to display your client/customer in your invoices based on the permutations of First Name , Last Name and Company Name.
+	
+----------------------------------
+### Support
+
+For all enquiries, troubleshooting, and recipe behaviour related questions, please post them here : https://support.workato.com/support/discussions
+
+Learn more about Workato 
+https://support.workato.com/support/solutions
+
+Questions? Contact us at
+ [support@workato.com](mailto:support@workato.com)",2019-01-18T04:57:40.744-08:00,2019-01-18T04:57:40.744-08:00,"{infusionsoft,clock,infusionsoft,quickbooks,email,utility}","{CRM,Marketing,""Recipe Tools"",Accounting}","{invoice,item,contact,email,customer,product,order}",FALSE,FALSE,0,0,281525
+8830696,10619,1,New recipe,"When there is a new/updated employee in BambooHR, do action",2019-01-29T19:05:14.204-08:00,2019-01-29T19:05:14.204-08:00,{bamboohr},"{""HR management""}",{employee},FALSE,FALSE,0,0,
+8830698,68711,1,Task 1: Upload all contacts from the Google Spreadsheets into Salesforce,"This task give you the opportunity to demonstrate your level of analytical thinking as well as problem solving ability. You are not required to resolve all errors. However, you are required to demonstrate your ability understand problems and generate solutions. No prior coding knowledge is required to complete the task.
+
+1) Sign up for a Salesforce Developer Account here: https://developer.salesforce.com/signup?d=70130000000td6N 
+
+2) Create a Google Spreadsheet and copy the data in this document: http://bit.ly/1UWN6ya. If you do not have a google account, create one here: https://drive.google.com 
+
+3) Sign up for a free Trial Workato account here: https://www.workato.com/signup. Create a copy of the following recipe: https://www.workato.com/recipes/34009?st=22eea6.
+
+4) Connect your Salesforce and Google account from step 1 and 2 to the recipe copied in step 3. Choose the spreadsheet that you have created in Step 2 from the Spreadsheet option under the recipe trigger.
+
+5) Start the recipe. Once all the jobs are completed you will find some jobs with errors. Fix the errors using the resources provided. Ensure that all account and contacts have been created in Salesforce. 
+
+6) Keep in mind that the data in the Spreadsheet belongs to the client, therefore it cannot be edited.
+",2019-01-19T08:39:16.922-08:00,2019-01-19T08:39:16.922-08:00,"{google_sheets,salesforce}","{Document/File,CRM,Marketing}","{""spreadsheet row"",account,contact}",FALSE,FALSE,0,0,34009
+8830700,69758,2,CoLAB - SF - Callable -Â Retrieve account snapshot,"When there is a new call for callable recipe, log message to output",2019-02-11T00:25:24.099-08:00,2019-03-05T01:18:32.948-08:00,"{workato_service,salesforce,workato_variable,workato_service}","{""Recipe Tools"",CRM,Marketing}","{account,""account contact relation""}",FALSE,TRUE,61,0,
+8830702,55456,1,New recipe,"When there is a scheduled record search using SOQL query in Salesforce, do action",2019-01-21T06:17:38.827-08:00,2019-01-21T06:17:38.827-08:00,{salesforce},"{CRM,Marketing}",{},FALSE,FALSE,0,0,
+8830704,63479,2,List recent Invoices in QuickBooks,"1. Type the Workbot command **QuickBooks list invoice** in the Workbot DM or in a channel Workbot is in.
+2. Workbot will ask for the **QuickBooks customer display name**.
+3. Workbot will list a maximum of 3 invoices associated with the customer.
+
+**Notes**
+Workbot must be invited to Slack channels before it can post messages in those channels.",2019-01-02T02:40:36.141-08:00,2019-01-02T02:40:37.382-08:00,"{slack_bot,slack_bot,quickbooks}","{Bots,""Artificial Intelligence"",Accounting}","{command,message,customer,invoice}",FALSE,FALSE,0,0,57668
+8830706,40990,1,"Sage Account synced
+to Replicon as Client","When there is a object created/updated in Sage Live, search clients in Replicon and other actions",2019-02-11T02:41:06.829-08:00,2019-02-11T02:41:06.829-08:00,"{sagelive,replicon,sagelive,workato_list,logger}","{Accounting,""Time and Expense"",""Recipe Tools""}","{client,user}",FALSE,FALSE,0,0,889086
+8830708,54808,3,[demo qb] Payment Created in Quickbooks - Create a Payment in Ascent,"When there is a new payment in QuickBooks, search for objects in Salesforce",2019-01-21T20:11:33.691-08:00,2019-01-21T20:11:45.793-08:00,"{quickbooks,salesforce}","{Accounting,CRM,Marketing}",{account},FALSE,FALSE,0,0,612432
+8830710,70032,1,"When attendee registers in Eventbrite, create a new contact/lead in Salesforce {and} notify me via email","A Contact or Lead will be created whenever an attendee registers for your event in Eventbrite. You may choose to be notified via Email as well when new records are being added into Salesforce
+ 
+#### How it works
+ Trigger: When someone registers for an event on Eventbrite
+ 
+ Actions:
+ - Search for existing leads in Salesforce
+- If the lead doesn't exist, add the new attendee as a lead in Salesforce.
+- If the lead already exists, send an email to yourself.
+ 
+#### Customization Options
+You can simply customize the email field . 
+ 
+#### What you need to use this recipe
+ No special setup or customization is required to run this recipe. You should have a Eventbrite and a Salesforce account that is enabled for API. Add your credentials in the connections section if you are not already connected to the apps. Go ahead and give it a try!
+
+#### Things to note
+The 'Company' field in this recipe is ""-"". If you wish to capture the company name of the attendee (which in turn affects the information being transferred to Salesforce), you can customize the registration page when you're creating your event. More information can be found here: http://help.eventbrite.com/customer/portal/articles/426127-how-to-create-custom-questions-for-attendees
+
+",2019-02-12T12:15:39.958-08:00,2019-02-12T12:15:39.958-08:00,"{event_brite,salesforce,email}","{""Event management"",Marketing,CRM,""Recipe Tools""}","{attendee,lead,email,contact}",FALSE,FALSE,0,0,14119
+8830712,40990,1,"Sage Opportunity
+synced to Replicon as Project","When there is a object created/updated in Sage Live, search projects in Replicon and other actions",2019-02-11T02:41:07.886-08:00,2019-02-11T02:41:07.886-08:00,"{sagelive,replicon,workato_list,logger,sagelive}","{Accounting,""Time and Expense"",""Recipe Tools""}","{project,user,client}",FALSE,FALSE,0,0,889042
+8830714,40990,1,New Sage Users synced to Replicon as Users,"When there is a object created in Sage Live, search users in Replicon and other actions",2019-02-11T02:41:08.507-08:00,2019-02-11T02:41:08.507-08:00,"{sagelive,replicon,workato_list}","{Accounting,""Time and Expense"",""Recipe Tools""}",{user},FALSE,FALSE,0,0,889088
+8830716,68728,1,Show Account details,"Command:  Salesforce show account
+
+Find out basic details on an account in your Salesforce.  
+-  You will be prompted to enter in the name of the account you want information on.
+-  If an exact name match is not found Workbot will look for similar names and provide up to 5 options.  
+- The number of results for similar name search can be updated but the recommendation is to leave this at the default of 5.",2019-01-17T14:03:52.176-08:00,2019-01-17T14:03:52.176-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,account,message}",FALSE,FALSE,0,0,491363
+8830718,69082,2,Updated customer in QuickBooks will send email via Workato,"When there is a updated customer in QuickBooks, send email via Workato",2019-02-12T02:52:48.718-08:00,2019-02-12T02:53:29.893-08:00,"{quickbooks,email}","{Accounting,""Recipe Tools""}",{email},FALSE,FALSE,0,0,
+8830720,39104,5,Callable Process MainPipeAbandoned and update Enablon 7.6,"When there is a trigger on a specified interval, create message using  template",2019-02-08T20:26:08.430-08:00,2019-02-27T21:52:19.241-08:00,"{workato_service,lookup_table,csv_parser,workato_smart_list,workato_variable,onprem_files,rest,workato_list,email}","{""Recipe Tools"",""Data Parser"",Database,Document/File,""Developer Tool"",""API Integration""}","{file,email}",FALSE,FALSE,2,0,884772
+8830722,53282,1,Copy of UAT-SF-GiftMembership-Merge,"When there is a trigger on a specified interval, search records using SOQL query in Salesforce",2019-01-28T19:19:45.826-08:00,2019-01-28T19:19:45.826-08:00,"{salesforce,workato_variable,workato_list,logger,salesforce,box,workato_service,email}","{CRM,Marketing,""Recipe Tools"",Document/File}","{opportunity,contact,file,email}",FALSE,FALSE,0,0,887793
+8830724,65632,2,Copy of New/updated task in Wrike will list users in Wrike,"When there is a trigger event, do action",2019-03-04T14:58:31.184-08:00,2019-03-04T15:03:30.406-08:00,"{clock,wrike,lookup_table}","{""Recipe Tools"",""Project Management""}",{},FALSE,FALSE,1,0,904879
+8830726,46161,18,New/updated row in a sheet in Google Sheets will add a new row in a sheet in Google Sheets,"When there is a new/updated row in a sheet in Google Sheets, do action",2019-01-25T22:38:33.516-08:00,2019-01-28T18:06:58.398-08:00,"{google_sheets,google_sheets}",{Document/File},"{""spreadsheet row""}",FALSE,FALSE,232,0,
+8830728,22564,1,New/updated event in Google Calendar will update object in FinancialForce,"When there is a new/updated event in Google Calendar, update object in FinancialForce",2019-01-13T04:57:22.111-08:00,2019-01-13T04:57:22.111-08:00,"{google_calendar,financialforce}","{Productivity,ERP}",{event},FALSE,FALSE,0,0,
+8830730,69238,1,New Customer created in QuickBooks Online will create client in Replicon,"This recipe transfers customers in QuickBooks to Replicon, working under the assumption that QuickBooks is the master system for client data and has the most updated information. This is useful when Replicon is your project management system that consolidates timesheets and expenses in a central system, while QuickBooks Online is your accounting system.
+
+!! Do note that QuickBooks will overwrite data in Replicon in this recipe, so turn it on only if QuickBooks is the master system with the most updated client data.
+
+
+#### How it works
+
+Trigger: New customers created in the last 30 minutes in QuickBooks will be picked up by the recipe when it is first started. Subsequently, new customers created in QuickBooks will be picked up while the recipe is running.
+
+Actions:
+- If client already exists in Replicon, the recipe will still sync the data from QuickBooks to Replicon and update the Replicon client data.
+- If client does not exist in Replicon, it will be created
+- If client is inactive in Replicon, its status will be changed back to active and it will be overwritten with the new data from QuickBooks
+- For the Replicon 'Country' input field, we use a lookup table (in formula mode) to convert QuickBook's freeform text values for 'Country' conform to Replicon's picklist values for 'Country'
+
+
+#### Customization Options
+- You can customise the data that gets transferred from QuickBooks to Replicon
+
+
+#### What you need to use this recipe
+- You should have a Replicon account with integrations rights and the Billing Manager permission set, as well as a Quickbooks Online account with Company Administrator rights.
+
+Usually used with: 
+- Sync new invoice in Replicon to QuickBooks Online - QuickBooks is master system
+- Sync QuickBooks Online invoice status to Replicon",2019-01-28T07:38:23.455-08:00,2019-01-28T07:38:23.455-08:00,"{quickbooks,replicon}","{Accounting,""Time and Expense""}","{customer,client}",FALSE,FALSE,0,0,10359
+8830732,70023,2,New ticket in Zendesk will create task in Wrike,"When there is a new ticket in Zendesk, create task in Wrike",2019-02-12T06:55:27.388-08:00,2019-02-12T07:00:02.207-08:00,"{zendesk,wrike}","{""Customer Service"",""Project Management""}",{ticket},FALSE,FALSE,0,2,
+8830734,69238,1,Sync new invoice in Replicon to QuickBooks Online - V2,"This recipe transfers invoices from Replicon to QuickBooks Online, and creates a customer on the fly in QuickBooks if the customer does not exist in QuickBooks, with the assumption that Replicon is the master system for client data. 
+This is useful when Replicon is your timesheet management system that consolidates timesheets and expenses in a central system, while QuickBooks Online is your accounting system.
+
+
+#### How it works
+Trigger: Invoices with the Sync Status marked as `Queued for Sync` in Replicon will be picked up and processed by the recipe.
+
+Actions:
+- In QuickBooks, search for the customer the invoice is billed to. If the customer does not currently exist in QuickBooks, proceed to create the customer in QuickBooks if Replicon is the master.
+- Create the invoice header in QuickBooks with the first invoice line item.
+- For each of the lists of time, fixed bids and expenses, iterate through the lists to bring invoice line items from Replicon into the QuickBooks invoice.
+- Finally, return to Replicon to update the invoice's External ID field with the corresponding QuickBooks invoice number
+
+#### What you need to use this recipe
+- You should have a Replicon account with integrations rights and the Billing Manager permission set, as well as a Quickbooks Online account with Company Administrator rights. For the actions to add line items to QuickBooks, the Item name must be the name of an Inventory item in your QuickBooks account.
+
+###Version History
+- V.39: Recipe updated for schema change ""Task Name - display text"" field, for Create Sales Invoice action.",2019-01-28T07:38:23.711-08:00,2019-01-28T07:38:23.711-08:00,"{replicon,quickbooks,email,replicon}","{""Time and Expense"",Accounting,""Recipe Tools""}","{invoice,email,customer,client}",FALSE,FALSE,0,0,98046
+8830736,68952,1,New email in Gmail will conditionally post message to channel in Slack,"When there is a new email in Gmail, conditionally post message to channel in Slack",2019-01-22T01:13:48.341-08:00,2019-01-22T01:13:48.341-08:00,"{gmail,slack}","{Productivity,Collaboration}","{email,message}",FALSE,FALSE,0,0,96211
+8830738,69238,1,"When a invoice is updated in QuickBooks Online, update invoice status in Replicon - V2","This recipe syncs the QuickBooks invoice status back into the corresponding Replicon invoice. When the QuickBooks status changes to 'Open (sent)' or 'Paid', the invoice status in Replicon will be correspondingly changed to 'Billed' and 'Paid' respectively. This is useful when Replicon is your project management system that consolidates timesheets and expenses in a central system, while QuickBooks Online is your accounting system.
+
+Also, this recipe keeps the due date of the invoices in sync - updated due dates on QuickBooks invoices will update the due date on Replicon invoices correspondingly.
+
+
+#### How it works
+
+Trigger: Invoices updated since a day ago in QuickBooks will be picked up at the start of the recipe. Subsequently, updated invoices will continue to be picked up by the recipe.
+
+Actions:
+- Update due date of Replicon invoice if it has been changed in QuickBooks.
+- If QuickBooks' email status is equal to 'EmailSent' and the outstanding balance is more than 0, then set the Replicon invoice status as Billed. If QuickBooks' email status is equal to 'EmailSent' and the outstanding balance is 0, then set the Replicon invoice status as Paid.
+
+
+#### Customization Options
+- NIL
+
+
+#### What you need to use this recipe
+- You should have a Replicon account with integrations rights and the Billing Manager permission set, as well as a Quickbooks Online account with Company Administrator rights.
+- Invoices that has been previously synced over from Replicon. The QuickBooks invoice should have the Replicon invoice URI stored in its statement memo field.
+
+Usually used with: 
+If QuickBooks is master system for client data:
+- Sync new invoice in Replicon to QuickBooks Online - QuickBooks is master system 
+- Sync QuickBooks Online customers to Replicon
+
+If Replicon is master system for client data:
+- Sync new invoice in Replicon to QuickBooks Online - Replicon is master system",2019-01-28T07:38:23.970-08:00,2019-01-28T07:38:23.970-08:00,"{quickbooks,replicon}","{Accounting,""Time and Expense""}",{invoice},FALSE,FALSE,0,0,182345
+8830740,10619,1,New recipe,"When there is a trigger event, do action",2019-02-06T02:30:28.378-08:00,2019-02-06T02:30:28.378-08:00,{},{},{},FALSE,FALSE,0,0,
+8830742,69953,12,New event via HTTP webhook will log message to output,"When there is a new event via HTTP webhook, log message to output",2019-02-14T06:40:42.188-08:00,2019-02-19T23:31:35.931-08:00,"{rest,logger}","{""Developer Tool"",""API Integration"",""Recipe Tools""}",{},FALSE,FALSE,1,0,
+8830744,10596,19,Digital Change Agent Lead Uploads Outreach 551 Bay Area Warm,"When there is a trigger event, do action",2019-01-23T09:12:27.455-08:00,2019-01-23T11:47:59.380-08:00,"{google_sheets,google_sheets,workato_service}","{Document/File,""Recipe Tools""}","{""spreadsheet row""}",FALSE,FALSE,88,11,885666
+8830746,69099,1,Prod - Netforum > SFDC,"When there is a trigger event, do action",2019-01-31T17:40:10.616-08:00,2019-01-31T17:40:10.616-08:00,"{clock,rest,xml_parser,csv_parser,salesforce,workato_smart_list,email}","{""Recipe Tools"",""Developer Tool"",""API Integration"",""Data Parser"",CRM,Marketing,Database}",{email},FALSE,FALSE,0,0,889691
+8830748,44413,15,Number of Treatment Plans Written US Official - January,"When there is a new/updated batch of rows via scheduled custom SQL in MySQL, update record in Salesforce",2019-02-08T17:33:54.046-08:00,2019-02-10T21:50:52.806-08:00,"{mysql,salesforce}","{Database,CRM,Marketing}","{account,case}",FALSE,FALSE,8,0,893357
+8830750,29820,2,New attendee in Eventbrite creates a contact in Salesforce,"New event attendee in eventbrite and create contact in salesforce 
+ 
+ Trigger: When registration in Eventbrite
+ 
+ Action: Create contact in Salesforce
+ 
+#### Customization Options
+ You can send emails out. You can check to see if the contact already exist.
+ 
+#### What you need to use this recipe
+ No special setup or customization is required to run this recipe. You should have a Eventbrite and a Salesforce account that is enabled for API. Add your credentials in the connections section if you are not already connected to the apps. Go ahead and give it a try!",2019-02-27T13:46:41.597-08:00,2019-02-27T13:46:41.908-08:00,"{event_brite,salesforce}","{""Event management"",Marketing,CRM}","{attendee,contact}",FALSE,FALSE,0,0,331
+8830752,18929,4,New Platform event Â OP1,"When there is a new  event in Salesforce, do action",2019-01-22T18:38:06.399-08:00,2019-01-22T18:46:59.507-08:00,"{salesforce,logger}","{CRM,Marketing,""Recipe Tools""}",{},FALSE,FALSE,0,0,
+8830754,69758,2,CoLAB - SF - Callable - Process contact changes,"When there is a new call for callable recipe, call recipe  ",2019-02-11T00:25:10.021-08:00,2019-03-05T01:18:12.656-08:00,"{workato_service,workato_service,workato_pub_sub}","{""Recipe Tools""}",{},FALSE,TRUE,30,0,
+8830756,43517,3,(PROD) Marketo Consent Updates to Salesforce Consent,"When there is a trigger event, do action",2019-02-11T14:39:08.100-08:00,2019-02-11T15:39:40.639-08:00,"{rest,marketo,salesforce,email}","{""Developer Tool"",""API Integration"",Marketing,CRM,""Recipe Tools""}","{lead,account,email}",FALSE,TRUE,0,0,848335
+8830758,54810,3,Clicdata Revenue to MySQL Sync (Trigger doesn't work),"When there is a new file or folder in Google Drive, do action",2019-01-31T08:43:06.867-08:00,2019-01-31T08:43:15.970-08:00,"{rest,mysql}","{""Developer Tool"",""API Integration"",Database}",{},FALSE,FALSE,0,0,889147
+8830760,18194,18,Lead Tagged 'Sync with Salesforce' in Intercom will create a Lead in Salesforce,"When there is a new event via HTTP webhook, create record in Salesforce",2019-02-10T03:17:56.420-08:00,2019-02-10T12:18:04.731-08:00,"{rest,salesforce}","{""Developer Tool"",""API Integration"",CRM,Marketing}",{lead},FALSE,TRUE,8,0,
+8830762,53282,37,Â UAT-SF-Membership_Information_Changes - Field History_Bala,"When there is a trigger on a specified interval, search records using SOQL query in Salesforce",2019-02-04T06:26:43.022-08:00,2019-02-04T10:48:56.975-08:00,"{salesforce,lookup_table,workato_list,logger,salesforce,workato_variable,box,workato_service,email}","{CRM,Marketing,""Recipe Tools"",Document/File}","{""opportunity field history"",opportunity,file,email}",FALSE,FALSE,15,0,888384
+8830764,168,2,"          New custom record
+          in NetSuite
+ will log message to output","When there is a trigger event, do action",2019-02-12T12:13:16.362-08:00,2019-02-12T12:14:48.831-08:00,"{netsuite,logger}","{Accounting,ERP,CRM,Ecommerce,""Financial Management"",""HR management"",""Recipe Tools""}",{478},FALSE,FALSE,25,0,
+8830766,69927,1,List Issues in Jira,List recent issues with optional parameters,2019-02-11T06:47:33.030-08:00,2019-02-11T06:47:33.030-08:00,"{skype_bot,skype_bot,jira}","{Bots,""Artificial Intelligence"",""Project Management""}","{command,message,issue}",FALSE,FALSE,0,0,493060
+8830768,39104,7,HR0001-iHUB Workday Worker Load (Full Sync) - Part A,"When there is a scheduled report in Workday, execute ruby code and other actions",2019-02-05T18:12:59.125-08:00,2019-02-05T22:32:13.662-08:00,"{workday,workato_custom_code,workato_smart_list,workday,oracle,email,workato_service,logger}","{""HR management"",ERP,""Financial Management"",""Recipe Tools"",""Developer Tool"",Database}",{email},FALSE,FALSE,1345,23,
+8830770,9195,2,NSSF: New Dropbox Shipper File Trigger old,"When there is a trigger event, do action",2019-02-21T15:29:13.121-08:00,2019-02-21T15:29:50.215-08:00,"{dropbox,workato_service,workato_list}","{Document/File,""Recipe Tools""}",{file},FALSE,FALSE,16,0,898471
+8830772,4848,1,Parse string as Google Maps formatted address,"When there is a trigger event, do action",2019-01-16T16:32:13.571-08:00,2019-01-16T16:32:13.571-08:00,"{workato_service,logger,rest,workato_service}","{""Recipe Tools"",""Developer Tool"",""API Integration""}",{},FALSE,FALSE,0,0,
+8830774,31498,15,Child_CriticalRealm: Approved Expense sheet from Replicon will sync as vendor bills in QBO,"When there is a trigger event, do action",2019-02-28T20:09:28.265-08:00,2019-03-05T12:44:55.603-08:00,"{workato_service,logger,rest,replicon_report_extract_token_connector_31498_1539901358,workato_list,clock,csv_parser,workato_service,lookup_table,gmail,workato_app}","{""Recipe Tools"",""Developer Tool"",""API Integration"",""Data Parser"",Productivity}","{email,recipe}",FALSE,TRUE,2,1,888537
+8830776,69927,1,JIRA new issue notification,Jira new Ticket (High or Highest) notification,2019-02-11T06:47:33.445-08:00,2019-02-11T06:47:33.445-08:00,"{jira,skype_bot}","{""Project Management"",Bots,""Artificial Intelligence""}","{issue,message}",FALSE,FALSE,0,0,493063
+8830778,69571,4,New or updated row in Smartsheet will search rows in Smartsheet,"When there is a new or updated row in Smartsheet, search rows in Smartsheet",2019-02-04T02:01:58.283-08:00,2019-02-04T02:24:56.539-08:00,"{smartsheet,smartsheet}",{Document/File},{},FALSE,FALSE,5,0,
+8830780,69927,1,Show Issue details in JIRA,Show Issue details in JIRA,2019-02-11T06:47:33.680-08:00,2019-02-11T06:47:33.680-08:00,"{skype_bot,skype_bot,jira}","{Bots,""Artificial Intelligence"",""Project Management""}","{command,message,issue}",FALSE,FALSE,0,0,493065
+8830782,43361,3,2019 January 30Â Production WayLeave Create and Upload File Into SharePointÂ  (New/updated record) When File URL is Present With Delete Action,"When there is a new/updated record in Quick Base, do action",2019-01-31T09:08:02.082-08:00,2019-01-31T09:09:20.510-08:00,"{quickbase,workato_list,quickbase,microsoft_sharepoint_connector_43361_1518078536,rest,logger}","{""Project Management"",""Recipe Tools"",""Developer Tool"",""API Integration""}","{record,attachment}",FALSE,FALSE,3748,19,858222
+8830784,69927,1,List Open Cases,"Top Priority Open Cases 
+
+Posted Daily at 9am Limited to 10 results. 
+",2019-02-11T06:47:33.972-08:00,2019-02-11T06:47:33.972-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,case,message,user}",FALSE,FALSE,0,0,491358
+8830786,69927,1,Weekly Notification of Open Cases,"Top Priority Open Cases 
+
+Posted Daily at 9am Limited to 10 results. 
+",2019-02-11T06:47:34.337-08:00,2019-02-11T06:47:34.337-08:00,"{clock,salesforce,skype_bot}","{""Recipe Tools"",CRM,Marketing,Bots,""Artificial Intelligence""}","{case,message,user}",FALSE,FALSE,0,0,491359
+8830788,69927,1,Show Account details,"Command:  Salesforce show account
+
+Find out basic details on an account in your Salesforce.  
+-  You will be prompted to enter in the name of the account you want information on.
+-  If an exact name match is not found Workbot will look for similar names and provide up to 5 options.  
+- The number of results for similar name search can be updated but the recommendation is to leave this at the default of 5.",2019-02-11T06:47:34.603-08:00,2019-02-11T06:47:34.603-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,account,message}",FALSE,FALSE,0,0,491363
+8830790,69674,18,"When an opportunity is updated as closed won in Salesforce, create an invoiceÂ in Xero.","When there is a trigger event, do action",2019-02-06T11:39:48.853-08:00,2019-02-19T13:03:39.808-08:00,"{salesforce,salesforce,xero}","{CRM,Marketing,Accounting}","{opportunity,""pricebook 2"",invoice}",FALSE,FALSE,4,0,
+8830792,69927,1,Weekly Notification for  Opportunities closing this week,"Top opportunities closing this week
+
+Limited to 10 results.  Posted Weekly on Monday 9am. ",2019-02-11T06:47:34.987-08:00,2019-02-11T06:47:34.987-08:00,"{clock,salesforce,skype_bot}","{""Recipe Tools"",CRM,Marketing,Bots,""Artificial Intelligence""}","{opportunity,message,user}",FALSE,FALSE,0,0,491365
+8830794,69927,1,Opportunities closing this week,"Top opportunities closing this week
+
+Limited to 10 results.  Posted Weekly on Monday 9am. ",2019-02-11T06:47:35.261-08:00,2019-02-11T06:47:35.261-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,opportunity,message,user}",FALSE,FALSE,0,0,491366
+8830796,72284,1,Slack Workbot will list recent Issues in Github,"1. Type the Workbot command **Github List Issue** in the Workbot DM or in a channel Workbot is in.
+2. Workbot will ask for the **Github repo** (e.g. homebrew/patches) and the **assignee handle** (e.g. mckinsey24).
+2. Workbot will list the 5 most recent issues found in the repo and assigned to the specified assignee.
+
+**Notes**
+- Workbot must be invited to Slack channels before it can post messages in those channels.
+",2019-02-24T13:52:25.956-08:00,2019-02-24T13:52:25.956-08:00,"{slack_bot,github,slack_bot}","{Bots,""Artificial Intelligence"",""Developer Tool""}","{command,issue,message}",FALSE,FALSE,0,0,57876
+8830798,69927,1,List Contacts for forecasted Opportunities without recent sales activity,"Contact these Opportunities
+
+Opportunities closing this month with last activity date &gt; 30 days ago. Limited to 10 results. ",2019-02-11T06:47:35.588-08:00,2019-02-11T06:47:35.588-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,user,message,opportunity,account}",FALSE,FALSE,0,0,491367
+8830800,69237,1,New email in Gmail will upload file to Dropbox via file contents,"When there is a new email in Gmail, upload file to Dropbox via file contents",2019-02-02T11:21:10.646-08:00,2019-02-02T11:21:10.646-08:00,"{gmail,dropbox}","{Productivity,Document/File}","{email,file}",FALSE,FALSE,0,0,
+8830802,50894,10,Copy of New/updated issue in Jira will search for records in Salesforce,"When there is a new/updated issue in Jira, search for records in Salesforce",2019-03-04T10:56:08.575-08:00,2019-03-04T12:09:29.345-08:00,"{jira,jira,salesforce}","{""Project Management"",CRM,Marketing}","{issue,lead}",FALSE,FALSE,2,0,903354
+8830804,69927,1,Show Opportunity details,Show Opportunity details in Salesforce,2019-02-11T06:47:35.878-08:00,2019-02-11T06:47:35.878-08:00,"{skype_bot,salesforce,skype_bot}","{Bots,""Artificial Intelligence"",CRM,Marketing}","{command,opportunity,message,account}",FALSE,FALSE,0,0,491369
+8830806,72284,1,Show GitHub PR Details for mentioned document,"When there is a new document from Slack Workbot, get issue or PR details in GitHub",2019-02-24T13:52:26.388-08:00,2019-02-24T13:52:26.388-08:00,"{slack_bot,github,utility,slack_bot}","{Bots,""Artificial Intelligence"",""Developer Tool"",""Recipe Tools""}","{""ur l mention"",message}",FALSE,FALSE,0,0,382631
+8830808,33359,1,Copy of Trigger on a specified interval will create repeat helper list,"When there is a trigger event, do action",2019-02-01T10:42:23.754-08:00,2019-02-01T10:42:23.754-08:00,"{clock,workato_list,logger}","{""Recipe Tools""}",{},FALSE,FALSE,0,0,890208
+8830810,69927,1,Zendesk new/update Ticket notification,Zendesk new/update Ticket (Urgent) notification,2019-02-11T06:47:36.208-08:00,2019-02-11T06:47:36.208-08:00,"{zendesk,skype_bot}","{""Customer Service"",Bots,""Artificial Intelligence""}","{ticket,message}",FALSE,FALSE,0,0,493048
+8830812,69927,1,List recents Tickets in Zendesk,List recent tickets in Zendesk,2019-02-11T06:47:36.430-08:00,2019-02-11T06:47:36.430-08:00,"{skype_bot,skype_bot,zendesk}","{Bots,""Artificial Intelligence"",""Customer Service""}","{command,message,ticket}",FALSE,FALSE,0,0,493053
+8830814,54809,5,Trigger on a specified interval will log message to output,"When there is a trigger event, do action",2019-01-24T17:07:45.399-08:00,2019-01-24T17:12:18.863-08:00,"{clock,logger}","{""Recipe Tools""}",{},FALSE,FALSE,1,0,
+8830816,72284,1,Part 1: Show GitHub Issue Details for mentioned document,"1. A Github issue URL is posted onto Slack.
+2. Workbot posts additional details about the issue onto Slack, as well as a `Close` button. (This recipe powers this URL unfurling.)
+3. If a user clicks the `Close` button, Workbot will proceed to close the issue on Github. 
+
+**Notes**
+- This recipe works with the [Close Github issue recipe](https://www.workato.com/recipes/382637-internal-close-github-issue). To use this, copy and run both recipes.
+
+- Workbot must be invited to Slack channels before it can post messages in those channels.",2019-02-24T13:52:26.821-08:00,2019-02-24T13:52:26.821-08:00,"{slack_bot,github,utility,slack_bot}","{Bots,""Artificial Intelligence"",""Developer Tool"",""Recipe Tools""}","{""ur l mention"",message}",FALSE,FALSE,0,0,382633
+8830818,56947,2,Copy of New command to Slack Workbot will search issues in Jira,"When there is a new command to Slack Workbot, do action",2019-02-14T12:19:49.745-08:00,2019-02-14T12:20:35.011-08:00,"{slack_bot,jira,slack_bot}","{Bots,""Artificial Intelligence"",""Project Management""}","{command,issue,message}",FALSE,FALSE,0,0,895727
+8830820,69927,1,Create Ticket in Zendesk,Create Ticket in Zendesk,2019-02-11T06:47:36.714-08:00,2019-02-11T06:47:36.714-08:00,"{skype_bot,skype_bot,zendesk}","{Bots,""Artificial Intelligence"",""Customer Service""}","{command,message,ticket}",FALSE,FALSE,0,0,493056
+8830822,9119,6,Copy of Accountzez,,2019-01-20T17:48:01.161-08:00,2019-01-20T18:08:26.424-08:00,{rest},"{""Developer Tool"",""API Integration""}",{},FALSE,FALSE,0,0,883511
+8830824,28314,1,New recipe,"When there is a trigger event, do action",2019-01-25T17:42:05.310-08:00,2019-01-25T17:42:05.310-08:00,{},{},{},FALSE,FALSE,0,0,
+8830826,69927,1,Show Ticket details in Zendesk,Show Ticket details in Zendesk,2019-02-11T06:47:36.917-08:00,2019-02-11T06:47:36.917-08:00,"{skype_bot,zendesk,skype_bot}","{Bots,""Artificial Intelligence"",""Customer Service""}","{command,ticket,message}",FALSE,FALSE,0,0,493059
+8830828,72284,1,[internal] Print GitHub Issue/PR Details,"When there is a new document from Slack Workbot, get issue or PR details in GitHub",2019-02-24T13:52:27.199-08:00,2019-02-24T13:52:27.199-08:00,"{slack_bot,github,utility,slack_bot}","{Bots,""Artificial Intelligence"",""Developer Tool"",""Recipe Tools""}",{},FALSE,FALSE,0,0,382635
+8830830,54808,1,New recipe,"When there is a trigger event, do action",2019-02-28T18:41:49.303-08:00,2019-02-28T18:41:49.303-08:00,{},{},{},FALSE,FALSE,0,0,
+8830832,72284,1,Part 2: Close Github Issue,"1. A Github issue URL is posted onto Slack.
+2. Workbot posts additional details about the issue onto Slack, as well as a `Close` button. 
+3. If a user clicks the `Close` button, Workbot will proceed to close the issue on Github. (This recipe powers this button interaction.)
+
+**Notes**
+- This recipe works with the [Show GitHub Issue Details](https://www.workato.com/recipes/382633-show-github-issue-details-for-mentioned-document) recipe. To use this, copy and run both recipes.
+
+- Workbot must be invited to Slack channels before it can post messages in those channels.",2019-02-24T13:52:27.472-08:00,2019-02-24T13:52:27.472-08:00,"{slack_bot,github,slack_bot}","{Bots,""Artificial Intelligence"",""Developer Tool""}","{command,issue,message}",FALSE,FALSE,0,0,382637
+8830834,72284,1,JIRA new Ticket notification,Jira new Ticket (High or Highest) notification,2019-02-24T13:52:27.741-08:00,2019-02-24T13:52:27.741-08:00,"{jira,slack_bot}","{""Project Management"",Bots,""Artificial Intelligence""}","{issue,message}",FALSE,FALSE,0,0,57712
+8830836,45431,2,(0) New SMS/MMS from Twilio for Loan ApplicationÂ ,"This integration triggers upon a message received via text, and guides a user with a loan application.
+
+1. Creates customer on salesforce
+2. Creates a loan in salesforce
+3. Directs the customer to a pre filled google sheet for further information",2019-03-01T08:02:13.817-08:00,2019-03-01T08:02:32.147-08:00,"{twilio,salesforce,twilio,rest,workato_variable,json_parser,workato_custom_code,box,logger}","{Communication,""Developer Tool"",CRM,Marketing,""API Integration"",""Recipe Tools"",""Data Parser"",Document/File}","{sms,file,""content document link""}",FALSE,FALSE,0,0,903826
+8830838,54567,2,Copy of Copy of Final-Active Pipeline Report,"When there is a new/updated record in Quick Base, do action",2019-02-15T00:45:20.116-08:00,2019-02-15T00:47:44.493-08:00,"{quickbase,smartsheet}","{""Project Management"",Document/File}",{record},FALSE,FALSE,45,0,893030
+8830840,72284,1,Show Issue details in JIRA,Show Issue details in JIRA,2019-02-24T13:52:28.143-08:00,2019-02-24T13:52:28.143-08:00,"{slack_bot,slack_bot,jira}","{Bots,""Artificial Intelligence"",""Project Management""}","{command,message,issue}",FALSE,FALSE,0,0,57784
+8830842,72284,1,List Issues in Jira,List recent issues with optional parameters,2019-02-24T13:52:28.491-08:00,2019-02-24T13:52:28.491-08:00,"{slack_bot,slack_bot,jira}","{Bots,""Artificial Intelligence"",""Project Management""}","{command,message,issue}",FALSE,FALSE,0,0,295418
+8830844,10619,1,New recipe,"When there is a trigger event, do action",2019-03-04T18:10:41.427-08:00,2019-03-04T18:10:41.427-08:00,{},{},{},FALSE,FALSE,0,0,
