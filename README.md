@@ -13,7 +13,7 @@ Below you will find the **reasoning**, **advantages & disadvantages**, and **ETL
 
 ### ERD
 
-![Normalized ERD](docs/normalised_erd.png)(docs/onebigtable_erd.png)
+![Normalized ERD](docs/normalised_erd.png)
 
 ### 1.1. Reasoning
 - **Decompose multi-valued attributes** (applications, categories, business objects) into their own tables.
